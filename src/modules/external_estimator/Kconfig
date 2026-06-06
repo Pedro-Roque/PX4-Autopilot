@@ -1,0 +1,12 @@
+menuconfig MODULES_EXTERNAL_ESTIMATOR
+	bool "external_estimator"
+	default n
+	---help---
+		Enable support for external_estimator
+
+menuconfig USER_EXTERNAL_ESTIMATOR
+	bool "external_estimator running as userspace module"
+	default n
+	depends on BOARD_PROTECTED && MODULES_EXTERNAL_ESTIMATOR
+	---help---
+		Put external_estimator in userspace memory
