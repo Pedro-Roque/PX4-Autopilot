@@ -131,7 +131,15 @@ private:
 	uORB::Subscription _vehicle_mocap_odometry_sub{ORB_ID(vehicle_mocap_odometry)};
 	uORB::Subscription _vehicle_visual_odometry_sub{ORB_ID(vehicle_visual_odometry)};
 
+	// publications
 	uORB::Publication<vehicle_attitude_s> _vehicle_attitude_pub{ORB_ID(vehicle_attitude)};
+	uORB::PublicationData<vehicle_local_position_s> _pub_lpos{ORB_ID(vehicle_local_position)};
+	uORB::PublicationData<vehicle_global_position_s> _pub_gpos{ORB_ID(vehicle_global_position)};
+	uORB::PublicationData<vehicle_odometry_s> _pub_odom{ORB_ID(vehicle_odometry)};
+	uORB::PublicationData<estimator_states_s> _pub_est_states{ORB_ID(estimator_states)};
+	uORB::PublicationData<estimator_status_s> _pub_est_status{ORB_ID(estimator_status)};
+	uORB::PublicationData<estimator_innovations_s> _pub_innov{ORB_ID(estimator_innovations)};
+	uORB::PublicationData<estimator_innovations_s> _pub_innov_var{ORB_ID(estimator_innovation_variances)};
 
 	Vector3f    _accel{};
 	Vector3f    _gyro{};
