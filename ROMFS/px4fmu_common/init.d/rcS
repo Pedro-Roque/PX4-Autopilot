@@ -383,6 +383,11 @@ else
 		attitude_estimator_q start
 	fi
 
+	if param compare -s EE_EN 1
+	then
+		external_estimator start
+	fi
+
 	#
 	# px4io
 	#
